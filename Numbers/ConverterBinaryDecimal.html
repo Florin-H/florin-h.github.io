@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Numbers :: Convert Binary <=> Decimal</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- This challenge requires that the developer implementing it follow these
+         constraints:
+
+    Arrays may not be used to contain the binary digits entered by the user
+    Determining the decimal equivalent of a particular binary digit in the 
+    sequence must be calculated using a single mathematical function, 
+    for example the natural logarithm. It's up to you to figure out 
+    which function to use.
+
+    User can enter up to 8 binary digits in one input field
+    User must be notified if anything other than a 0 or 1 was entered
+    User views the results in a single output field containing the 
+    decimal (base 10) equivalent of the binary number that was entered
+ -->
+</head>
+
+<body>
+
+    <nav>
+        <div class="wrapper">
+            <ul>
+                <li> <a href="index.html">&lt;Go Back</a> </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content">
+        <div class="converter-column">
+            <h1>Convert Binary to Decimal</h1>
+            <form class="converter-rows">
+                <label for="bin2dec-input">
+                    Enter 8-digit binary number:
+                </label>
+                <input type="text" id="bin2dec-input" required pattern="\b[01]+\b" minlength="1" maxlength="8"
+                    size="10">
+                <label for="bin2dec-output">Decimal Equivalent:</label>
+                <input type="text" id="bin2dec-output" size="10" readonly>
+                <input type="button" id="convert-button" onclick="bin2dec();" value="Convert"></input>
+                <div id="bin2dec-error" class="bin2dec-error"></div>
+            </form>
+        </div>
+        <div class="converter-column">
+            <h1>Convert Decimal to Binary</h1>
+            <form class="converter-rows">
+                    <label for="bin2dec-input">
+                        Enter decimal number:
+                    </label>
+                    <input type="number" id="dec2bin-input" required pattern="^[0-9]*$" 
+                    minlength="1" maxlength="10" max="1073741823" size="10">
+                    <label for="bin2dec-output">Binary Equivalent:</label>
+                    <input type="text" id="dec2bin-output" size="30" readonly>
+                    <input type="button" id="convert-button" onclick="dec2bin();" value="Convert"></input>
+                    <div class="dec2bin-error"></div>
+                </form>
+        </div>
+    </div>
+    <script src="script.js"></script> 
+</body>
+
+</html>

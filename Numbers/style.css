@@ -1,0 +1,249 @@
+/* 
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000; 
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;   
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+/*
+EVERYTHING ABOVE IS RESET STYLESHEET
+*/
+
+:root
+{
+    --black-color: #0d0208;
+    --dark-green-color: #003b00;
+    --green-color: #008f11;
+    --light-green-color: #00ff41;
+}
+
+@font-face 
+{
+    font-family: 'Fixedsys Excelsior 3.01';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Fixedsys Excelsior 3.01'), url('../Fonts/FSEX300.woff') format('woff');
+}
+
+body
+{
+    background-color: var(--black-color);
+    color: var(--green-color);
+}
+
+.wrapper
+{
+    margin: 0 auto 0 60px;
+    width: 80%;
+}
+
+nav
+{
+    width: 100%;
+    height: 100px;
+    background-color: var(--black-color);
+}
+
+ul
+{
+    margin-left: 60px;
+}
+ul li 
+{
+    list-style: none;
+    /*display: inline-block;*/
+    float: left;
+    line-height: 100px;
+}
+ul li a
+{
+    display: block;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Fixedsys Excelsior 3.01';
+    color: var(--green-color);
+    padding: 0 20px;
+}
+ul li a:hover
+{
+    color: var(--light-green-color);
+}
+
+.content
+{
+    width: 100%;
+    height: 400px;
+
+    /* background-color: blue; */
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+
+    font-family: 'Fixedsys Excelsior 3.01';
+    color: var(--green-color);
+}
+
+.converter-column
+{
+    /* DEBUG: Remove this */
+    /* background-color: red; */
+
+    flex: 0 0 400px;
+    text-align: center;
+}
+
+.converter-column h1
+{
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    padding: 10px 0 50px 0;
+}
+
+.converter-rows
+{
+    /* DEBUG: Remove this */
+    /* background-color: yellow; */
+    width: 100%;
+
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.converter-rows label
+{
+    text-align: left;
+    padding: 10px 0 10px 0;
+}
+
+.converter-rows input[type=text], input[type=number]
+{
+    border: 1px solid white;
+    background-color: var(--black-color);
+    caret-color: var(--light-green-color);
+    color: white;
+
+    font-family: 'Fixedsys Excelsior 3.01';
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+#bin2dec-output, #dec2bin-output
+{
+    border: none;
+    background-color: var(--black-color);
+    text-align: center;
+}
+
+#convert-button
+{
+    padding: 10px 30px;
+    font-family: 'Fixedsys Excelsior 3.01';
+    font-size: 16px;
+    margin-top: 30px;
+}
+
+#bin2dec-error
+{
+    color: red;
+}
+
