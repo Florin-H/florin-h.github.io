@@ -228,7 +228,7 @@ ul li a:hover
     margin-bottom: 30px;
 }
 
-#std-output-text, #std-output-text
+.std-output-text
 {
     border: none;
     background-color: var(--black-color);

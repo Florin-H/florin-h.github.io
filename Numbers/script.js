@@ -15,7 +15,7 @@ function bin2dec()
     {
         result = result + (binaryValue[i] * Math.pow(2, (binaryValue.length - i - 1)));
     }
-    document.getElementById("std-output-text").value = result.toString();    
+    document.getElementById("dec-output-text").value = result.toString();    
 }
 function dec2bin()
 {
@@ -27,7 +27,7 @@ function dec2bin()
         result = (decimalValue % 2).toString() + result;
         decimalValue = Math.trunc(decimalValue / 2);
     }
-    document.getElementById("std-output-text").value = result;
+    document.getElementById("bin-output-text").value = result;
 }
 function fibSequence()
 {
