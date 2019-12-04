@@ -2,7 +2,7 @@
 function bin2dec()
 {
     var binaryValue = 
-    document.getElementById("std-input-text").value;
+    document.getElementById("bin-input-text").value;
     var regex = RegExp("\\b[01]+\\b");
     if (regex.test(binaryValue) == false)
     {
@@ -20,7 +20,7 @@ function bin2dec()
 function dec2bin()
 {
     var decimalValue = 
-    document.getElementById("std-input-number").value;
+    document.getElementById("dec-input-number").value;
     var result = "";
     while(decimalValue >= 1)
     {

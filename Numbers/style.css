@@ -216,7 +216,7 @@ ul li a:hover
     padding: 10px 0 10px 0;
 }
 
-.std-row input[type=text], input[type=number]
+.std-input-text, .std-input-number
 {
     border: 1px solid white;
     background-color: var(--black-color);
@@ -228,11 +228,16 @@ ul li a:hover
     margin-bottom: 30px;
 }
 
-.std-output-text
+.std-output-text 
 {
     border: none;
     background-color: var(--black-color);
     text-align: center;
+
+    color: white;
+    font-family: 'Fixedsys Excelsior 3.01';
+    font-size: 16px;
+
 }
 
 #std-output-paragraph
