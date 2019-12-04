@@ -33,32 +33,32 @@
     </nav>
 
     <div class="content">
-        <div class="converter-column">
+        <div class="std-col">
             <h1>Convert Binary to Decimal</h1>
-            <form class="converter-rows">
-                <label for="bin2dec-input">
+            <form class="std-row">
+                <label for="std-input-text">
                     Enter 8-digit binary number:
                 </label>
-                <input type="text" id="bin2dec-input" required pattern="\b[01]+\b" minlength="1" maxlength="8"
+                <input type="text" id="std-input-text" required pattern="\b[01]+\b" minlength="1" maxlength="8"
                     size="10">
-                <label for="bin2dec-output">Decimal Equivalent:</label>
-                <input type="text" id="bin2dec-output" size="10" readonly>
-                <input type="button" id="convert-button" onclick="bin2dec();" value="Convert"></input>
-                <div id="bin2dec-error" class="bin2dec-error"></div>
+                <label for="std-output-text">Decimal Equivalent:</label>
+                <input type="text" id="std-output-text" size="10" readonly>
+                <input type="button" id="std-input-button" onclick="bin2dec();" value="Convert"></input>
+                <div id="std-error" class="std-error"></div>
             </form>
         </div>
-        <div class="converter-column">
+        <div class="std-col">
             <h1>Convert Decimal to Binary</h1>
-            <form class="converter-rows">
-                    <label for="bin2dec-input">
+            <form class="std-row">
+                    <label for="std-input-text">
                         Enter decimal number:
                     </label>
-                    <input type="number" id="dec2bin-input" required pattern="^[0-9]*$" 
+                    <input type="number" id="std-input-number" required pattern="^[0-9]*$" 
                     minlength="1" maxlength="10" max="1073741823" size="10">
-                    <label for="bin2dec-output">Binary Equivalent:</label>
-                    <input type="text" id="dec2bin-output" size="30" readonly>
-                    <input type="button" id="convert-button" onclick="dec2bin();" value="Convert"></input>
-                    <div class="dec2bin-error"></div>
+                    <label for="std-output-text">Binary Equivalent:</label>
+                    <input type="text" id="std-output-text" size="30" readonly>
+                    <input type="button" id="std-input-button" onclick="dec2bin();" value="Convert"></input>
+                    <div class="std-error"></div>
                 </form>
         </div>
     </div>

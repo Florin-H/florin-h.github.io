@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Numbers :: Fibonacci Sequence</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- Fibonacci Sequence - Enter a number and have the program generate the Fibonacci sequence to that number or to the Nth number. -->
+</head>
+
+<body>
+
+    <nav>
+        <div class="wrapper">
+            <ul>
+                <li> <a href="index.html">&lt;Go Back</a> </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content">
+        <div class="std-col">
+            <h1>Fibonacci sequence to the Nth number</h1>
+            <form class="std-row">
+                <label for="std-input-text">
+                    Enter positive integer N <= 100:
+                </label>
+                <input type="text" id="std-input-text" required pattern="\b[01]+\b" minlength="1" maxlength="8"
+                    size="10">
+                <label for="std-output-paragraph">Sequence [1 to N]:</label>
+                <p id="std-output-paragraph"></p>
+                <input type="button" id="std-input-button" onclick="fibSequence();" value="Calculate"></input>
+                <div id="std-error" class="std-error"></div>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script> 
+</body>
+
+</html>

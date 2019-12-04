@@ -179,7 +179,7 @@ ul li a:hover
     color: var(--green-color);
 }
 
-.converter-column
+.std-col
 {
     /* DEBUG: Remove this */
     /* background-color: red; */
@@ -188,15 +188,16 @@ ul li a:hover
     text-align: center;
 }
 
-.converter-column h1
+.std-col h1
 {
     text-decoration: none;
     font-size: 20px;
+    font-weight: normal;
     color: white;
     padding: 10px 0 50px 0;
 }
 
-.converter-rows
+.std-row
 {
     /* DEBUG: Remove this */
     /* background-color: yellow; */
@@ -209,13 +210,13 @@ ul li a:hover
 
 }
 
-.converter-rows label
+.std-row label
 {
     text-align: left;
     padding: 10px 0 10px 0;
 }
 
-.converter-rows input[type=text], input[type=number]
+.std-row input[type=text], input[type=number]
 {
     border: 1px solid white;
     background-color: var(--black-color);
@@ -227,14 +228,23 @@ ul li a:hover
     margin-bottom: 30px;
 }
 
-#bin2dec-output, #dec2bin-output
+#std-output-text, #std-output-text
 {
     border: none;
     background-color: var(--black-color);
     text-align: center;
 }
 
-#convert-button
+#std-output-paragraph
+{
+    text-align: left;
+    white-space: nowrap;
+    color: var(--light-green-color);
+    margin: 0 auto;
+    letter-spacing: normal;
+}
+
+#std-input-button
 {
     padding: 10px 30px;
     font-family: 'Fixedsys Excelsior 3.01';
@@ -242,7 +252,7 @@ ul li a:hover
     margin-top: 30px;
 }
 
-#bin2dec-error
+#std-error
 {
     color: red;
 }
