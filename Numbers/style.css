@@ -104,6 +104,8 @@ input, select {
 EVERYTHING ABOVE IS RESET STYLESHEET
 */
 
+/* GENERAL SETTINGS */
+
 :root
 {
     --black-color: #0d0208;
@@ -120,49 +122,81 @@ EVERYTHING ABOVE IS RESET STYLESHEET
     src: local('Fixedsys Excelsior 3.01'), url('../Fonts/FSEX300.woff') format('woff');
 }
 
+
 body
 {
     background-color: var(--black-color);
     color: var(--green-color);
 }
 
-.wrapper
-{
-    margin: 0 auto 0 60px;
-    width: 80%;
-}
+/* INDEX OF NUMBERS */
 
 nav
 {
     width: 100%;
-    height: 100px;
+    height: 50px;
     background-color: var(--black-color);
 }
-
 ul
 {
-    margin-left: 60px;
+    margin-left: 50px;
+    display: flex;
+    flex-flow: column wrap;
 }
 ul li 
 {
     list-style: none;
-    /*display: inline-block;*/
-    float: left;
-    line-height: 100px;
+    line-height: 50px;
+
+    /* background-color: yellow;
+    border: 1px solid black; */
 }
 ul li a
 {
-    display: block;
     text-decoration: none;
     font-size: 20px;
     font-family: 'Fixedsys Excelsior 3.01';
     color: var(--green-color);
-    padding: 0 20px;
 }
 ul li a:hover
 {
     color: var(--light-green-color);
 }
+
+.back-link
+{
+    margin-left: -25px;
+    color: white;
+}
+
+@media only screen and (min-width: 768px)
+{
+    ul li:first-child
+    {
+        flex: 1 0 100%;
+    }
+
+    ul li
+    {
+        flex: 0 0 50%;
+    }
+
+    ul
+    {
+        flex-flow: row wrap;
+    }
+}
+
+@media only screen and (min-width: 1000px)
+{
+    ul li
+    {
+        flex: 0 0 33%;
+    }
+
+}
+
+/* CONTENT OF NUMBERS */
 
 .content
 {

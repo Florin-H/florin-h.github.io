@@ -33,6 +33,12 @@ function fibSequence()
 {
     var fibTerm = 
     document.getElementById("std-input-text").value;
+    if (fibTerm > 100)
+    {
+        document.getElementById("std-error").innerHTML = "Please enter a number lower than 100!" 
+        return;
+    }
+    document.getElementById("std-error").innerHTML = "";
     document.getElementById("std-output-paragraph").innerHTML = "";
     var text = "";
     for (var i = 1; i <= fibTerm; i++)
