@@ -1,0 +1,273 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* RESET ABOVE */
+
+:root
+{
+    --color-primary-blue-0: #336799;
+    --color-primary-blue-1: #7BA3CA;
+    --color-primary-blue-2: #4E7EAB;
+    --color-primary-blue-3: #19538A;
+    --color-primary-blue-4: #0E3E6C;
+
+    --color-complement-orange-0: #ECA742;
+    --color-complement-orange-1: #FFD393;
+    --color-complement-orange-2: #FFC269;
+    --color-complement-orange-3: #D58819;
+    --color-complement-orange-4: #A6670A;
+
+    --color-primary-red-0: #5E2639;
+    --color-primary-red-1: #855464; 
+    --color-primary-red-2: #643A48; 
+    --color-primary-red-3: #51162A; 
+    --color-primary-red-4: #3D0719; 
+
+    --color-complement-green-0: #426026;
+    --color-complement-green-1: #6E8755;
+    --color-complement-green-2: #50663B;
+    --color-complement-green-3: #345216;
+    --color-complement-green-4: #223E07;
+
+    --color-text-main: #000;
+    --color-text-disabled: #666666;
+    --color-buttons-bg-main: #212e3b;
+    --color-buttons-text-main: #FFC269;
+
+    --color-buttons-bg-small: #0E3E6C;
+    --color-buttons-text-small: #0E3E6C;
+
+    --color-background: #9bbad8;
+    --color-readonly: #b1cae2;
+    --color-invalid: #dbc8aa;
+}
+
+body
+{
+    background-color: var(--color-background);
+    color: var(--color-text-main);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+p
+{
+    justify-self: center;
+}
+
+.container 
+{
+    display: grid;
+    height: calc(100vh - 20vh);
+    width: calc(100vw - 20vw);
+    grid-template-rows: repeat(15, 1fr);
+    row-gap: 0px;
+    justify-items: stretch;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;    
+    margin-left: calc(10vw);
+    margin-top: calc(5vh);
+}
+
+.container-row
+{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10px;
+    max-height: 50px;
+    justify-items: stretch;
+    justify-content: center;
+    align-items: stretch;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.container-row p
+{
+    font-weight: bold;
+    align-self: center;
+    grid-column: 1 / span 3;
+}
+
+.container-row input
+{
+    border-radius: 4px;
+}
+
+.container-row button
+{
+    border-width: 1px;
+    text-align: start;
+
+    background-color: unset;
+    border-style: solid;
+    border-color: var(--color-buttons-bg-small);
+    color: var(--color-buttons-text-small);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.container-buttons
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.view-button
+{
+    width: min-content;
+    border-radius: 4px;
+}
+
+#validation-result
+{
+    background-color: var(--color-buttons-text-main);
+    grid-column: 1 / span 3;
+    align-self: center;
+    color: red;
+}
+
+#delete-button, #save-button, #generate-button, #generate-new-button, #save-password, #copy-password
+{
+    width: 80%;
+    border-radius: 4px;
+    text-align: center;
+
+    background-color: var(--color-buttons-bg-main);
+    color: var(--color-buttons-text-main);
+}
+
+#save-button
+{
+    justify-self: end;
+}
+
+#purge-button:disabled, #save-button:disabled
+{
+    background-color: var(--color-invalid);
+    color: var(--color-text-disabled);
+}
+
+.container-row label
+{
+    justify-self: start;
+    align-self: center;
+}
+
+.container-row input
+{
+    border-width: 0px;
+}
+
+.container-row hr
+{
+    width: 100%;
+    height: 3px;
+    border: none;
+    background-color: var(--color-buttons-bg-main);
+    grid-column: 1 / span 3;
+    align-self: center;
+    justify-self: center;
+}
+
+#copy-password
+{
+    justify-self: end;
+}
+
+#generate-button, #generate-new-button
+{
+    justify-self: stretch;
+    align-self: stretch;
+    width: 100%;
+    grid-column: auto;
+}
+
+#generate-button:disabled
+{
+    background-color: var(--color-invalid);
+    color: var(--color-text-disabled);
+}
+
+#save-password:disabled
+{
+    background-color: var(--color-invalid);
+    color: var(--color-text-disabled);
+}
+
+#generate-new-button:disabled
+{
+    background-color: var(--color-invalid);
+    color: var(--color-text-disabled);
+}
+
+input:invalid
+{
+    background-color: var(--color-invalid);
+    box-shadow: none;
+}
+
+input:read-only
+{
+    background-color: var(--color-readonly);
+}
+
+input:-moz-read-only
+{
+    background-color: var(--color-readonly);
+}
+
+@media screen and (max-device-width: 600px)
+{
+    body 
+    { 
+        font-size: 1em;
+        background-color: red; 
+    }
+}
