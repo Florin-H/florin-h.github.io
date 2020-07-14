@@ -74,6 +74,7 @@ function Initialize()
 function UpdateValidationResult(message = "Validation failed.")
 {
   document.getElementById("validation-result").innerHTML = message;
+  ScrollToTop();
 }
 
 function Validate()
@@ -173,6 +174,12 @@ function ExcludeSymbols(exclusions = [])
     return !exclusions.includes(value);
   });
   return filteredSymbols;
+}
+
+function ScrollToTop()
+{
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
 }
 
 // BUTTONS
