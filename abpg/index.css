@@ -103,9 +103,9 @@ p
 .container 
 {
     display: grid;
-    height: calc(100vh - 20vh);
+    /* height: calc(100vh - 20vh); */
     width: calc(100vw - 20vw);
-    grid-template-rows: repeat(15, 1fr);
+    /* grid-template-rows: repeat(15, 1fr); */
     row-gap: 0px;
     justify-items: stretch;
     justify-content: center;
@@ -119,9 +119,8 @@ p
 {
     display: grid;
     width: 100%;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     column-gap: 10px;
-    max-height: 50px;
     justify-items: stretch;
     justify-content: center;
     align-items: stretch;
@@ -131,51 +130,77 @@ p
 
 .container-row p
 {
+    font-size: 2em;
     font-weight: bold;
     align-self: center;
-    grid-column: 1 / span 3;
+    grid-column: 1 / span 5;
+    height: 100px;
+}
+
+#validation-result
+{
+    background-color: var(--color-buttons-text-main);
+    grid-column: 1 / span 5;
+    align-self: center;
+    justify-self: center;
+    font-size: 2em;
+    color: red;
+}
+
+.container-row label
+{
+    grid-column: 1 / span 1;
+    font-size: 1.75em;
+    justify-self: start;
+    align-self: center;
 }
 
 .container-row input
 {
+    font-size: 2em;
+    height: 100px;
     border-radius: 4px;
+    grid-column: 2 / span 3;
+    border-width: 0px;
 }
 
 .container-row button
 {
     border-width: 1px;
-    text-align: start;
+    text-align: center;
+    height: 100px;
 
     background-color: unset;
     border-style: solid;
     border-color: var(--color-buttons-bg-small);
     color: var(--color-buttons-text-small);
     font-family: 'Courier New', Courier, monospace;
-}
-
-.container-buttons
-{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    font-size: 2em;
+    grid-column: 5 / span 1;
+    justify-self: end;
 }
 
 .view-button
 {
-    width: min-content;
+    width: 100%;
     border-radius: 4px;
 }
 
-#validation-result
+#delete-button
 {
-    background-color: var(--color-buttons-text-main);
-    grid-column: 1 / span 3;
-    align-self: center;
-    color: red;
+    justify-self: left;
+    grid-column: 1 / span 2;
+}
+
+#save-button
+{
+    justify-self: left;
+    grid-column: 4 / span 2;
 }
 
 #delete-button, #save-button, #generate-button, #generate-new-button, #save-password, #copy-password
 {
-    width: 80%;
+    width: 100%;
     border-radius: 4px;
     text-align: center;
 
@@ -183,26 +208,10 @@ p
     color: var(--color-buttons-text-main);
 }
 
-#save-button
-{
-    justify-self: end;
-}
-
-#purge-button:disabled, #save-button:disabled
+#delete-button:disabled, #save-button:disabled
 {
     background-color: var(--color-invalid);
     color: var(--color-text-disabled);
-}
-
-.container-row label
-{
-    justify-self: start;
-    align-self: center;
-}
-
-.container-row input
-{
-    border-width: 0px;
 }
 
 .container-row hr
@@ -263,11 +272,16 @@ input:-moz-read-only
     background-color: var(--color-readonly);
 }
 
-@media screen and (max-device-width: 600px)
+/* @media screen and (max-device-width: 600px)
 {
     body 
     { 
-        font-size: 1em;
+        font-size: 1.75em;
         background-color: red; 
     }
-}
+
+    .container-row button
+    {
+        font-size: 1.75em;
+    }
+} */
