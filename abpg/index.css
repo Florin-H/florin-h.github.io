@@ -106,7 +106,7 @@ p
     /* height: calc(100vh - 20vh); */
     width: calc(100vw - 20vw);
     /* grid-template-rows: repeat(15, 1fr); */
-    row-gap: 0px;
+    row-gap: 10px;
     justify-items: stretch;
     justify-content: center;
     align-items: stretch;
@@ -134,7 +134,7 @@ p
     font-weight: bold;
     align-self: center;
     grid-column: 1 / span 5;
-    height: 100px;
+    height: 50px;
 }
 
 #validation-result
@@ -145,11 +145,12 @@ p
     justify-self: center;
     font-size: 2em;
     color: red;
+    height: 50px;
 }
 
 .container-row label
 {
-    grid-column: 1 / span 1;
+    grid-column: 1 / span 2;
     font-size: 1.75em;
     justify-self: start;
     align-self: center;
@@ -157,10 +158,10 @@ p
 
 .container-row input
 {
-    font-size: 2em;
+    font-size: 1.75em;
     height: 100px;
     border-radius: 4px;
-    grid-column: 2 / span 3;
+    grid-column: 3 / span 2;
     border-width: 0px;
 }
 
@@ -217,25 +218,30 @@ p
 .container-row hr
 {
     width: 100%;
-    height: 3px;
+    height: 5px;
     border: none;
     background-color: var(--color-buttons-bg-main);
-    grid-column: 1 / span 3;
+    grid-column: 1 / span 5;
     align-self: center;
     justify-self: center;
-}
-
-#copy-password
-{
-    justify-self: end;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 #generate-button, #generate-new-button
 {
-    justify-self: stretch;
-    align-self: stretch;
-    width: 100%;
-    grid-column: auto;
+    justify-self: left;
+    grid-column: 1 / span 2;
+}
+
+#copy-password
+{
+    grid-column: 3 / span 2;
+}
+
+#save-password
+{
+    grid-column: 5 / span 1;
 }
 
 #generate-button:disabled

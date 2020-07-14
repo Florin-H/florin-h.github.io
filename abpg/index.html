@@ -74,14 +74,14 @@
         </div>
         <!-- 11 -->
         <div class="container-row">
-            <label for="product">Product to generate password for:</label>
+            <label for="product">Generate password for:</label>
             <input id="product" type="text" minlength="3" maxlength="70" required>
         </div>
         <!-- 12 -->
         <div class="container-row">
             <label for="chars-to-ignore">Exclude symbols (no separators):</label>
             <input id="chars-to-ignore" type="text" minlength="0" maxlength="70">
-            <button id="loadExclusions" class="view-button" onClick="LoadExistingExclusions()">Load exclusions</button>
+            <button id="loadExclusions" class="view-button" onClick="LoadExistingExclusions()">Load</button>
         </div>
         <!-- 13 -->
         <div class="container-row">
@@ -97,10 +97,9 @@
         <!-- 15 -->
         <div class="container-row">
             <button id="generate-new-button" onclick="GenerateNewPassword()" disabled>GENERATE NEW PASSWORD</button>
-            <div class="container-buttons">
-                <button id="save-password" onClick="SavePassword()">SAVE</button>
-                <button id="copy-password" onClick="CopyPassword()">COPY</button>
-            </div>
+            <button id="copy-password" onClick="CopyPassword()">COPY</button>
+            <button id="save-password" onClick="SavePassword()">SAVE</button>
+            
         </div>
     </div>
 
