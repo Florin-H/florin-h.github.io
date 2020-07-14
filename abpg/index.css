@@ -103,38 +103,35 @@ p
 .container 
 {
     display: grid;
-    /* height: calc(100vh - 20vh); */
-    width: calc(100vw - 20vw);
-    /* grid-template-rows: repeat(15, 1fr); */
-    row-gap: 10px;
+    width: calc(100vw - 10vw);
+    row-gap: 5px;
     justify-items: stretch;
     justify-content: center;
     align-items: stretch;
     align-content: center;    
-    margin-left: calc(10vw);
-    margin-top: calc(5vh);
+    margin-left: calc(5vw);
+    margin-top: calc(3vh);
 }
 
 .container-row
 {
     display: grid;
-    width: 100%;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    column-gap: 10px;
+    column-gap: 3px;
     justify-items: stretch;
     justify-content: center;
     align-items: stretch;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
 }
 
 .container-row p
 {
-    font-size: 2em;
+    font-size: 0.75em;
     font-weight: bold;
     align-self: center;
     grid-column: 1 / span 5;
-    height: 50px;
+    height: 7px;
 }
 
 #validation-result
@@ -143,25 +140,27 @@ p
     grid-column: 1 / span 5;
     align-self: center;
     justify-self: center;
-    font-size: 2em;
+    font-size: 1em;
     color: red;
-    height: 50px;
+    height: 20px;
 }
 
 .container-row label
 {
-    grid-column: 1 / span 2;
-    font-size: 1.75em;
+    grid-column: 1 / span 1;
+    width: 100%;
+    font-size: 0.75em;
     justify-self: start;
     align-self: center;
 }
 
 .container-row input
 {
-    font-size: 1.75em;
-    height: 100px;
+    font-size: 0.75em;
+    width: 100%;
+    justify-self: end;
     border-radius: 4px;
-    grid-column: 3 / span 2;
+    grid-column: 2 / span 3;
     border-width: 0px;
 }
 
@@ -169,14 +168,13 @@ p
 {
     border-width: 1px;
     text-align: center;
-    height: 100px;
 
     background-color: unset;
     border-style: solid;
     border-color: var(--color-buttons-bg-small);
     color: var(--color-buttons-text-small);
     font-family: 'Courier New', Courier, monospace;
-    font-size: 2em;
+    font-size: 0.75em;
     grid-column: 5 / span 1;
     justify-self: end;
 }
@@ -190,12 +188,14 @@ p
 {
     justify-self: left;
     grid-column: 1 / span 2;
+    font-size: 1em;
 }
 
 #save-button
 {
     justify-self: left;
     grid-column: 4 / span 2;
+    font-size: 1em;
 }
 
 #delete-button, #save-button, #generate-button, #generate-new-button, #save-password, #copy-password
@@ -217,29 +217,37 @@ p
 .container-row hr
 {
     width: 100%;
-    height: 5px;
+    height: 3px;
     border: none;
     background-color: var(--color-buttons-bg-main);
     grid-column: 1 / span 5;
     align-self: center;
     justify-self: center;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 3px;
+    margin-bottom: 3px;
 }
 
 #generate-button, #generate-new-button
 {
+    font-size: 1em;
     justify-self: left;
     grid-column: 1 / span 2;
 }
 
+#password
+{
+    grid-column: 3 / span 2;
+}
+
 #copy-password
 {
+    font-size: 1em;
     grid-column: 3 / span 2;
 }
 
 #save-password
 {
+    font-size: 1em;
     grid-column: 5 / span 1;
 }
 

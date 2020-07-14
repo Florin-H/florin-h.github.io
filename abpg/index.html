@@ -34,7 +34,7 @@
         </div>
         <!-- 3 -->
         <div class="container-row">
-            <p>Constant values - Only set <b>ONCE</b></p>
+            <p>Constants - Only set <b>ONCE</b></p>
         </div>
         <!-- 4 -->
         <div class="container-row">
@@ -71,7 +71,7 @@
         </div>
         <!-- 10 -->
         <div class="container-row">
-            <p>Variable values - Set <b><u>ONCE PER PASSWORD</u></b></p>
+            <p>Variables - Set <b><u>ONCE PER PASSWORD</u></b></p>
         </div>
         <!-- 11 -->
         <div class="container-row">
@@ -91,15 +91,15 @@
         </div>
         <!-- 14 -->
         <div class="container-row">
-            <button id="generate-button" onclick="GeneratePassword()">GENERATE</button>
+            <button id="generate-button" onclick="GeneratePassword()">GO</button>
             <input id="password" type="text" minlength="3" maxlength="70" required readonly>
             <button id="showHide5" class="view-button" onClick="ShowHideToggle(this.id, 'password')">Hide</button>
         </div>
         <!-- 15 -->
         <div class="container-row">
-            <button id="generate-new-button" onclick="GenerateNewPassword()" disabled>GENERATE NEW PASSWORD</button>
+            <button id="generate-new-button" onclick="GenerateNewPassword()" disabled>NEW PASSWORD</button>
             <button id="copy-password" onClick="CopyPassword()">COPY</button>
-            <button id="save-password" onClick="SavePassword()">SAVE</button>
+            <button id="save-password" onClick="SavePassword()">EXPORT</button>
             
         </div>
     </div>
