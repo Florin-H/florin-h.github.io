@@ -25,82 +25,80 @@
 
     <div class="container">
         <!-- 1 -->
-        <div class="container-row">
-            <p>A BASIC PASSWORD GENERATOR</p>
+        <div class="container-row-title">
+            <p><u>A BASIC PASSWORD GENERATOR</u></p>
         </div>
         <!-- 2 -->
-        <div class="container-row">
+        <div class="container-row-title">
             <div id="validation-result"></div>
         </div>
         <!-- 3 -->
-        <div class="container-row">
+        <div class="container-row-title">
             <p>Constants - Only set <b>ONCE</b></p>
         </div>
         <!-- 4 -->
         <div class="container-row">
-            <label for="name">Your name:</label>
-            <input id="name" type="password" minlength="6" maxlength="70" required readonly>
+            <label for="name" class="label-constant">Your name:</label>
+            <input id="name" class="input-constants" type="password" minlength="6" maxlength="70" required readonly>
             <button id="showHide1" class="view-button" onClick="ShowHideToggle(this.id, 'name')">View</button>
         </div>
         <!-- 5 -->
         <div class="container-row">
-            <label for="cnp">Unique id (ex. CNP):</label>
-            <input id="cnp" type="password" minlength="6" maxlength="70" required readonly>
+            <label for="cnp" class="label-constant">Unique id (ex. CNP):</label>
+            <input id="cnp" class="input-constants" type="password" minlength="6" maxlength="70" required readonly>
             <button id="showHide2" class="view-button" onClick="ShowHideToggle(this.id, 'cnp')">View</button>
         </div>
         <!-- 6 -->
         <div class="container-row">
-            <label for="pob">Place of birth:</label>
-            <input id="pob" type="password" minlength="3" maxlength="70" required readonly>
+            <label for="pob" class="label-constant">Place of birth:</label>
+            <input id="pob" class="input-constants" type="password" minlength="3" maxlength="70" required readonly>
             <button id="showHide3" class="view-button" onClick="ShowHideToggle(this.id, 'pob')">View</button>
         </div>
         <!-- 7 -->
         <div class="container-row">
-            <label for="father">Father's initial:</label>
-            <input id="father" type="password" minlength="1" maxlength="1" required readonly>
+            <label for="father" class="label-constant">Father's initial:</label>
+            <input id="father" class="input-constants" type="password" minlength="1" maxlength="1" required readonly>
             <button id="showHide4" class="view-button" onClick="ShowHideToggle(this.id, 'father')">View</button>
         </div>
         <!-- 8 -->
         <div class="container-row">
-            <button id="delete-button" onclick="DeleteConstants()">CLEAR</button>
-            <button id="save-button" onclick="SaveConstants()">SAVE</button>
+            <button id="delete-button" class="action-button" onclick="DeleteConstants()">CLEAR</button>
+            <button id="save-button" class="action-button" onclick="SaveConstants()">SAVE</button>
         </div>
         <!-- 9 -->
         <div class="container-row">
-            <hr>
+            <hr class="hor-line">
         </div>
         <!-- 10 -->
-        <div class="container-row">
-            <p>Variables - Set <b><u>ONCE PER PASSWORD</u></b></p>
+        <div class="container-row-title">
+            <p>Variables - Set PER PASSWORD</p>
         </div>
         <!-- 11 -->
         <div class="container-row">
-            <label for="product">Generate password for:</label>
-            <input id="product" type="text" minlength="3" maxlength="70" required>
+            <label for="product" class="label-variable">Generate password for:</label>
+            <input id="product" class="input-vars" type="text" minlength="3" maxlength="70" required>
         </div>
         <!-- 12 -->
         <div class="container-row">
-            <label for="chars-to-ignore">Exclude symbols (no separators):</label>
-            <input id="chars-to-ignore" type="text" minlength="0" maxlength="70">
+            <label for="chars-to-ignore" class="label-variable">Exclude symbols (no separators):</label>
+            <input id="chars-to-ignore" class="input-vars" type="text" minlength="0" maxlength="70">
             <button id="loadExclusions" class="view-button" onClick="LoadExistingExclusions()">Load</button>
         </div>
         <!-- 13 -->
         <div class="container-row">
-            <label for="iterations">Number of iterations:</label>
-            <input id="iterations" type="text" minlength="0" maxlength="70" readonly>
+            <label for="iterations" class="label-variable">Number of iterations:</label>
+            <input id="iterations" class="input-vars" type="text" minlength="0" maxlength="70" readonly>
         </div>
         <!-- 14 -->
         <div class="container-row">
-            <button id="generate-button" onclick="GeneratePassword()">GO</button>
-            <input id="password" type="text" minlength="3" maxlength="70" required readonly>
+            <input id="password" class="input-vars" type="text" minlength="3" maxlength="70" required readonly>
             <button id="showHide5" class="view-button" onClick="ShowHideToggle(this.id, 'password')">Hide</button>
+            <button id="generate-button" class="action-button" onclick="GeneratePassword()">GENERATE</button>
         </div>
         <!-- 15 -->
         <div class="container-row">
-            <button id="generate-new-button" onclick="GenerateNewPassword()" disabled>NEW PASSWORD</button>
-            <button id="copy-password" onClick="CopyPassword()">COPY</button>
-            <button id="save-password" onClick="SavePassword()">EXPORT</button>
-            
+            <button id="generate-new-button" class="action-button" onclick="GenerateNewPassword()" disabled>NEW PASSWORD</button>
+            <button id="export-data" class="action-button" onClick="ExportData()">EXPORT</button>
         </div>
     </div>
 

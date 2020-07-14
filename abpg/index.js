@@ -20,8 +20,11 @@ const CharacterType =
 };
 Object.freeze(CharacterType);
 
+var passwordExists;
+
 // LOCAL STORAGE & INIT
 
+//Dan: replace if else with return
 function IsLocalStorageSupported()
 {
   if (typeof (Storage) !== "undefined")
@@ -48,7 +51,7 @@ function LoadLocalStorage()
 
 function DisableTheOtherFunctions()
 {
-  document.getElementById("purge-button").disabled = true;
+  document.getElementById("delete-button").disabled = true;
   document.getElementById("save-button").disabled = true;
   document.getElementById("generate-button").disabled = true;
 }
@@ -67,6 +70,9 @@ function Initialize()
   document.getElementById("password").value = null;
 
   document.getElementById("chars-to-ignore").removeAttribute("readonly");
+  document.getElementById("generate-new-button").disabled = true;
+  document.getElementById("export-data").disabled = true;
+  passwordExists = false;
 }
 
 // VALIDATION
@@ -118,7 +124,8 @@ function SetExclusions(existingExclusions, exclusionsIterationStart, iterations)
     return true;
   }
 
-  UpdateValidationResult("No exclusions set for this product!");
+  // Figure out how to separate Load by pressing the button & Load by generating a password
+  // UpdateValidationResult("No exclusions set for this product!");
   if (exclusionsInput.getAttribute("readonly"))
   {
     exclusionsInput.value = "";
@@ -210,6 +217,7 @@ function DeleteConstants()
   });
 }
 
+//Dan: rename this, maybe toggleVisibility :))
 function ShowHideToggle(buttonId, inputId)
 {
   var target = document.getElementById(inputId);
@@ -229,6 +237,12 @@ function GeneratePassword()
   if (EmptyValuesExist(['product']))
   {
     UpdateValidationResult("Product must NOT be empty");
+    return;
+  }
+
+  if (passwordExists)
+  {
+    CopyPassword();
     return;
   }
 
@@ -260,8 +274,10 @@ function GeneratePassword()
   document.getElementById("password").value = pwd;
 
   EnableGenerateNewPassword();
+  passwordExists = true;
   CopyPassword();
-  document.getElementById("save-password").disabled = false;
+  document.getElementById("generate-button").innerHTML = "COPY";
+  document.getElementById("export-data").disabled = false;
 }
 
 function GenerateNewPassword()
@@ -297,7 +313,7 @@ function CopyPassword()
 
 // SAVING
 
-function SavePassword()
+function ExportData()
 {
   var data = GetData();
   Download("ABPG_MyInfo.json", data);
