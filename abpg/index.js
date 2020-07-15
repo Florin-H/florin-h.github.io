@@ -71,7 +71,6 @@ function Initialize()
 
   document.getElementById("chars-to-ignore").removeAttribute("readonly");
   document.getElementById("generate-new-button").disabled = true;
-  document.getElementById("export-data").disabled = true;
   passwordExists = false;
 }
 
@@ -285,6 +284,7 @@ function GenerateNewPassword()
   var product = FlattenProductName(document.getElementById("product").value);
   var iterations = LoadExistingIterations(product);
   IncreaseIterationsAndSave(product, iterations);
+  passwordExists = false;
   GeneratePassword();
 }
 

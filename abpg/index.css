@@ -91,13 +91,12 @@ table {
 body
 {
     background-color: var(--color-background);
-    font-size: 1em;
     color: var(--color-text-main);
-    font-family: 'Courier New', Courier, monospace;
 }
 
 p, label, input, button
 {
+    font-family: 'Courier New', Courier, monospace;
     font-size: 1em;
 }
 
@@ -122,7 +121,7 @@ input:-moz-read-only
     display: grid;
     grid-template-columns: 1fr;
     width: calc(100vw - 10vw);
-    row-gap: 5px;
+    row-gap: calc(0.5vh);
     justify-items: stretch;
     justify-content: center;
     align-items: center;
@@ -154,6 +153,9 @@ input:-moz-read-only
     align-self: center;
     justify-self: center;
     color: red;
+
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
 }
 
 .label-constant, .label-variable
@@ -164,6 +166,8 @@ input:-moz-read-only
 .input-constants, .input-vars
 {
     flex-basis: 75%;
+    height: calc(3vh);
+    min-height: 20px;
     border-radius: 4px;
     border-width: 0px;
 }
@@ -171,6 +175,8 @@ input:-moz-read-only
 .view-button
 {
     flex-basis: 20%;
+    height: calc(3vh);
+    min-height: 20px;
     border-radius: 4px;
     border-width: 1px;
     text-align: center;
@@ -179,7 +185,6 @@ input:-moz-read-only
     border-style: solid;
     border-color: var(--color-buttons-bg-small);
     color: var(--color-buttons-text-small);
-    font-family: 'Courier New', Courier, monospace;  
 }
 
 .action-button
@@ -189,7 +194,10 @@ input:-moz-read-only
     border-radius: 4px;
     border-width: 0px;
     text-align: center;
+
     height: calc(5vh);
+    min-height: 30px;
+
     margin-top: calc(2vh);
 
     background-color: var(--color-buttons-bg-main);
@@ -210,31 +218,52 @@ input:-moz-read-only
     background-color: var(--color-buttons-bg-main);
     align-self: center;
     justify-self: center;
-    margin-top: 3px;
-    margin-bottom: 3px;
+    margin-top: calc(1vh);
+    margin-bottom: calc(1vh);
 }
 
 #generate-button
 {
     flex-basis: 100%;
     height: calc(7vh);
+    min-height: 40px;
 }
 
 #generate-new-button, #export-data
 {
-    height: calc(7vh)
+    height: calc(7vh);
+    min-height: 30px;
 }
 
-/* @media screen and (max-device-width: 600px)
+@media screen and (min-device-width: 800px)
 {
-    body 
-    { 
-        font-size: 1.75em;
-        background-color: red; 
+    .container
+    {
+        width: calc(100vw - 65vw);
+        margin-left: calc(32.5vw);
     }
 
-    .container-row button
+    .container-row
     {
-        font-size: 1.75em;
+        margin-top: calc(0.5vh);
+        margin-bottom: calc(0.5vh);
     }
-} */
+
+    .action-button
+    {
+        margin-top: calc(1vh);
+        max-width: calc(100vw - 92.5vw);   
+    }
+
+    #generate-new-button, #export-data
+    {
+        max-width: calc(100vw - 85vw);
+    }
+
+    #generate-button
+    {
+        max-width: calc(100vw - 85vw);
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
