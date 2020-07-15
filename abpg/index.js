@@ -24,17 +24,9 @@ var passwordExists;
 
 // LOCAL STORAGE & INIT
 
-//Dan: replace if else with return
 function IsLocalStorageSupported()
 {
-  if (typeof (Storage) !== "undefined")
-  {
-    return true;
-  }
-  else
-  {
-    return false;
-  }
+  return typeof(Storage) !== "undefined";
 }
 
 function LoadLocalStorage()
@@ -216,8 +208,7 @@ function DeleteConstants()
   });
 }
 
-//Dan: rename this, maybe toggleVisibility :))
-function ShowHideToggle(buttonId, inputId)
+function ToggleVisibility(buttonId, inputId)
 {
   var target = document.getElementById(inputId);
   var buttonText = document.getElementById(buttonId);
