@@ -20,7 +20,7 @@ const CharacterType =
 };
 Object.freeze(CharacterType);
 
-var passwordExists;
+var passwordExists, previousProduct;
 
 // LOCAL STORAGE & INIT
 
@@ -64,6 +64,7 @@ function Initialize()
   document.getElementById("chars-to-ignore").removeAttribute("readonly");
   document.getElementById("generate-new-button").disabled = true;
   passwordExists = false;
+  previousProduct = "";
 }
 
 // VALIDATION
@@ -192,7 +193,7 @@ function SaveConstants()
 
   CONSTANTS_NAMES.forEach(function (element)
   {
-    ls.setItem(element, document.getElementById(element).value)
+    ls.setItem(element, document.getElementById(element).value);
     document.getElementById(element).setAttribute("readonly", "true");
   });
 }
@@ -230,14 +231,14 @@ function GeneratePassword()
     return;
   }
 
-  if (passwordExists)
+  var product = FlattenProductName(document.getElementById("product").value);
+  
+  if (passwordExists && (previousProduct == product))
   {
     CopyPassword();
     return;
   }
 
-  var product = FlattenProductName(document.getElementById("product").value);
-  
   var exclusionsInput = document.getElementById("chars-to-ignore");
   var iterations = LoadExistingIterations(product);
   var previousExclusionsExist = LoadExistingExclusions(product, iterations);
@@ -265,8 +266,8 @@ function GeneratePassword()
 
   EnableGenerateNewPassword();
   passwordExists = true;
+  previousProduct = product;
   CopyPassword();
-  document.getElementById("generate-button").innerHTML = "COPY";
   document.getElementById("export-data").disabled = false;
 }
 
@@ -358,7 +359,11 @@ function LoadDataFromFile(path)
   reader.onload = function (e)
   {
     var contents = e.target.result;
-    alert(contents);
+    contents = JSON.parse(contents);
+    Object.entries(contents).forEach(function ([key, value])
+    {
+      if (key != "length") ls.setItem(key, value);
+    });
   };
   reader.readAsText(fileData);
 }

@@ -286,15 +286,15 @@ input:-moz-read-only
         max-width: calc(100vw - 92.5vw);   
     }
 
-    #generate-new-button, #export-data
+    #generate-button, #generate-new-button
     {
         max-width: calc(100vw - 85vw);
     }
 
-    #generate-button
+    #export-data, .label-import
     {
-        max-width: calc(100vw - 85vw);
-        margin-left: auto;
-        margin-right: auto;
+        flex-basis: 50%;
+        margin-top: calc(1vh);
+        max-width: calc(100vw - 85vw);  
     }
 }
