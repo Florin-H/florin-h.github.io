@@ -94,10 +94,16 @@ body
     color: var(--color-text-main);
 }
 
-p, label, input, button
+a, p, label, input, button
 {
     font-family: 'Courier New', Courier, monospace;
     font-size: 1em;
+}
+
+a 
+{
+    background-color: black;
+    color: var(--color-buttons-text-main);
 }
 
 input:invalid
@@ -264,6 +270,28 @@ input:-moz-read-only
 
     background-color: var(--color-buttons-bg-main);
     color: var(--color-buttons-text-main);
+}
+
+/* How To Use */
+
+.how-container 
+{
+    display: grid;
+    grid-template-columns: 1fr;
+    width: calc(100vw - 10vw);
+    row-gap: calc(2vh);
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;    
+    margin-left: calc(5vw);
+    margin-top: calc(3vh);
+}
+
+.how-comments
+{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.75em;
 }
 
 @media screen and (min-device-width: 800px)
