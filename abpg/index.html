@@ -98,11 +98,13 @@
         <!-- 15 -->
         <div class="container-row">
             <button id="generate-button" class="action-button" onclick="GeneratePassword()">GENERATE</button>
+            <button id="generate-new-button" class="action-button" onclick="GenerateNewPassword()" disabled>NEW PASSWORD</button>
         </div>
         <!-- 16 -->
         <div class="container-row">
-            <button id="generate-new-button" class="action-button" onclick="GenerateNewPassword()" disabled>NEW PASSWORD</button>
             <button id="export-data" class="action-button" onClick="ExportData()">EXPORT</button>
+            <input id="file-selector" type="file" class="input-file" accept=".json" onchange="LoadDataFromFile(this)">
+            <label for="file-selector" class="label-import">IMPORT</label>
         </div>
     </div>
 

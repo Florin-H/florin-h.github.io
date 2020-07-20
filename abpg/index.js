@@ -302,7 +302,7 @@ function CopyPassword()
   document.execCommand("copy");
 }
 
-// SAVING
+// SAVING DATA
 
 function ExportData()
 {
@@ -335,6 +335,37 @@ function Download(filename, data) {
   element.click();
 
   document.body.removeChild(element);
+}
+
+// LOADING DATA
+
+function LoadDataFromFile(path)
+{
+  var fileData = path.files[0];
+  if(!fileData)
+  {
+    UpdateValidationResult("No files uploaded!");
+    return;
+  }
+
+  if(!ValidateFileType(fileData))
+  {
+    UpdateValidationResult("File must be of type JSON!");
+    return;
+  }
+
+  var reader = new FileReader();
+  reader.onload = function (e)
+  {
+    var contents = e.target.result;
+    alert(contents);
+  };
+  reader.readAsText(fileData);
+}
+
+function ValidateFileType(fileData)
+{
+  return fileData.type == "application/json";
 }
 
 // ALGORITHM

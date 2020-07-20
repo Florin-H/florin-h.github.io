@@ -222,17 +222,48 @@ input:-moz-read-only
     margin-bottom: calc(1vh);
 }
 
-#generate-button
+#generate-button, #generate-new-button
 {
     flex-basis: 100%;
     height: calc(7vh);
     min-height: 40px;
 }
 
-#generate-new-button, #export-data
+#export-data
 {
     height: calc(7vh);
     min-height: 30px;
+}
+
+.input-file
+{
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 0.1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    white-space: nowrap;
+    width: 0.1px;
+}
+
+.label-import
+{
+    flex-basis: 40%;
+    border-radius: 4px;
+
+    text-align: center;
+    
+    cursor: pointer;
+    display: inline-block;
+    
+    height: calc(7vh);
+    line-height: calc(7vh);
+    min-height: 30px;
+    margin-top: calc(2vh);
+
+    background-color: var(--color-buttons-bg-main);
+    color: var(--color-buttons-text-main);
 }
 
 @media screen and (min-device-width: 800px)
