@@ -325,4 +325,10 @@ input:-moz-read-only
         margin-top: calc(1vh);
         max-width: calc(100vw - 85vw);  
     }
+
+    .how-comments
+    {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1em;
+    }
 }
